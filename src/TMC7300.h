@@ -1,5 +1,5 @@
-#ifndef TMC7300IC_H
-#define TMC7300IC_H
+#ifndef TMC7300_H
+#define TMC7300_H
 #include "TMC7300_Map.h"
 #include <Arduino.h>
 
@@ -32,4 +32,4 @@ public:
         return 0;
     }
 };
-#endif // TMC7300IC_H
+#endif // TMC7300_H
