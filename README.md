@@ -1,7 +1,9 @@
 # 7300  (under development)
 ## Arduino library for controlling TMC7300 DC motor driver ICs
 
-### [Reference](https://joshua-8.github.io/TMC7300/)
+https://github.com/joshua-8/TMC7300
+
+## [Doxygen reference](https://joshua-8.github.io/TMC7300/)
 
 My goal is to make a good library for controlling the TMC7300 chips, and to keep things simple, unlike other TMC motor driver libraries (see Acknowledgements) I do not have a plan to support other chips in a more general way using this library.
 
