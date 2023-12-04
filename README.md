@@ -1,11 +1,13 @@
 # 7300  (under development)
 ## Arduino library for controlling TMC7300 DC motor driver ICs
 
+[![arduino-library-badge](https://www.ardu-badge.com/badge/TMC7300.svg?)](https://www.ardu-badge.com/TMC7300)
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/joshua1024/library/TMC7300.svg)](https://registry.platformio.org/libraries/joshua1024/TMC7300)
 [![Arduino Lint](https://github.com/joshua-8/TMC7300/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/joshua-8/TMC7300/actions/workflows/arduino-lint.yml)
 
 https://github.com/joshua-8/TMC7300
 
-## [Doxygen reference](https://joshua-8.github.io/TMC7300/)
+Doxygen reference: https://joshua-8.github.io/TMC7300/
 
 My goal is to make a good library for controlling the TMC7300 chips, and to keep things simple, unlike other TMC motor driver libraries (see Acknowledgements) I do not have a plan to support other chips in a more general way using this library.
 
