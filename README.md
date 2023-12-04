@@ -1,6 +1,8 @@
 # 7300  (under development)
 ## Arduino library for controlling TMC7300 DC motor driver ICs
 
+[![Arduino Lint](https://github.com/joshua-8/TMC7300/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/joshua-8/TMC7300/actions/workflows/arduino-lint.yml)
+
 https://github.com/joshua-8/TMC7300
 
 ## [Doxygen reference](https://joshua-8.github.io/TMC7300/)
@@ -15,7 +17,7 @@ My goal is to make a good library for controlling the TMC7300 chips, and to keep
 * ESP32-S3 QT Py
 
 # Acknowledgements
-* This library is based on @bread-wolf's work in the [TMCSerial](https://github.com/bread-wolf/TMCSerial) and[TMCField](https://github.com/bread-wolf/TMCField) libraries, both of which are generously licensed under the AGPL3.0 license.
-* This library is also based on work done by @trinamic and Analog Devices Inc. in the [TMC-API](https://github.com/trinamic/TMC-API/tree/master), which is generously licensed under the MIT license.
+* This library is based on [@bread-wolf](https://github.com/bread-wolf)'s work in the [TMCSerial](https://github.com/bread-wolf/TMCSerial) and [TMCField](https://github.com/bread-wolf/TMCField) libraries, both of which are generously licensed under the AGPL3.0 license.
+* This library is based on work done by [@trinamic](https://github.com/trinamic) and [Analog Devices Inc.](https://www.analog.com) in the [TMC-API](https://github.com/trinamic/TMC-API/tree/master), which is generously licensed under the MIT license.
 
 Find the comments in the code of this library to see which parts are based on which of the above libraries.
