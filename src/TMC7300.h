@@ -6,13 +6,23 @@
 
 #define TMC_WRITE_BIT 0x80
 
+/**
+ * @brief  Top level class for the TMC7300 library. This class controls a TMC7300 chip.
+ */
 class TMC7300IC {
 public:
-    TMC7300IC(uint8_t _pin, uint8_t _chipAddress, uint32_t _baudrate = 115200)
+    /**
+     * @brief  constructor for class that controls a TMC7300 chip.
+     * @param  _pin: pin to send uart signals through
+     * @param  _chipAddress: The address is selected by AD0 (bit 0, LSB) and AD1 (bit 1, MSB) in the range 0 to 3
+     * @param  _baudrate: approximate bits per second to communicate with, default 100000
+     */
+    TMC7300IC(uint8_t _pin, uint8_t _chipAddress, uint32_t _baudrate = 100000)
         : pin(_pin)
         , chipAddress(_chipAddress)
-        , baudrate(_baudrate)
     {
+        // TODO: limit to TMC7300's allowable speeds
+        uartDelay = (1000000 / _baudrate);
     }
     void begin()
     {
@@ -25,7 +35,7 @@ public:
 protected:
     uint8_t pin;
     uint8_t chipAddress;
-    uint32_t baudrate;
+    uint32_t uartDelay;
 
     // clang-format off
     int32_t registers[10] = {
@@ -62,21 +72,18 @@ public:
         /* Calculate CRC */
         writeRequest[7] = calcCRC(writeRequest, 7);
 
-        unsigned long lastMicros = 0;
+        delayMicroseconds(uartDelay);
+        // TODO: use hardware specific delays with more precision
         /* Write data */
         for (uint8_t j = 0; j < 8; j++) {
-            lastMicros = micros();
-            digitalWrite(TX, LOW); // Start bit
-            while ((micros() - lastMicros) < (1000000 / baudrate)) { }
-            lastMicros = micros();
+            digitalWrite(pin, LOW); // Start bit
+            delayMicroseconds(uartDelay);
             for (uint8_t i = 0; i < 8; i++) {
-                digitalWrite(TX, (writeRequest[j] >> i) & 0x01);
-                while ((micros() - lastMicros) < (1000000 / baudrate)) { }
-                lastMicros = micros();
+                digitalWrite(pin, (writeRequest[j] >> i) & 0x01);
+                delayMicroseconds(uartDelay);
             }
-            digitalWrite(TX, HIGH); // Stop bit
-            while ((micros() - lastMicros) < (1000000 / baudrate)) { }
-            lastMicros = micros();
+            digitalWrite(pin, HIGH); // Stop bit
+            delayMicroseconds(uartDelay);
         }
         // TODO: DELAY SOME BETWEEN MESSAGES?
     }
