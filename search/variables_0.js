@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['baudrate_0',['baudrate',['../class_t_m_c7300_i_c.html#ac039e0eb23338b144863a27bf15646a8',1,'TMC7300IC']]]
+  ['chipaddress_0',['chipAddress',['../class_t_m_c7300_i_c.html#a9d1811c593772eb078a5a61cdde254d1',1,'TMC7300IC']]]
 ];

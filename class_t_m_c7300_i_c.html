@@ -77,12 +77,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Top level class for the TMC7300 library. This class controls a TMC7300 chip.  
+ <a href="class_t_m_c7300_i_c.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_t_m_c7300_8h_source.html">TMC7300.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6448c6118594e8f9d19d94c751c5f2a0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#a6448c6118594e8f9d19d94c751c5f2a0">TMC7300IC</a> (uint8_t _pin, uint8_t _chipAddress, uint32_t _baudrate=115200)</td></tr>
-<tr class="separator:a6448c6118594e8f9d19d94c751c5f2a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafd961b4fb7c6f99b7f52b6b97a9b029"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#aafd961b4fb7c6f99b7f52b6b97a9b029">TMC7300IC</a> (uint8_t _pin, uint8_t _chipAddress, uint32_t _baudrate=100000)</td></tr>
+<tr class="memdesc:aafd961b4fb7c6f99b7f52b6b97a9b029"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor for class that controls a TMC7300 chip.  <a href="class_t_m_c7300_i_c.html#aafd961b4fb7c6f99b7f52b6b97a9b029">More...</a><br /></td></tr>
+<tr class="separator:aafd961b4fb7c6f99b7f52b6b97a9b029"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6979ff53a82b011460f8dd8713f4ed98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#a6979ff53a82b011460f8dd8713f4ed98">begin</a> ()</td></tr>
 <tr class="separator:a6979ff53a82b011460f8dd8713f4ed98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65e857f91a0ba5081ebda15a65a4b4a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#a65e857f91a0ba5081ebda15a65a4b4a4">writeField</a> (<a class="el" href="class_t_m_c_field.html">TMCField</a> field, uint32_t fieldValue)</td></tr>
@@ -98,14 +102,16 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:ab93010417c84741c36b237cab86b67ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d1811c593772eb078a5a61cdde254d1"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#a9d1811c593772eb078a5a61cdde254d1">chipAddress</a></td></tr>
 <tr class="separator:a9d1811c593772eb078a5a61cdde254d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac039e0eb23338b144863a27bf15646a8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#ac039e0eb23338b144863a27bf15646a8">baudrate</a></td></tr>
-<tr class="separator:ac039e0eb23338b144863a27bf15646a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b8c27b149e09bb1dc1aaa8b5e7bda45"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#a7b8c27b149e09bb1dc1aaa8b5e7bda45">uartDelay</a></td></tr>
+<tr class="separator:a7b8c27b149e09bb1dc1aaa8b5e7bda45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2e8224737e747ec4bcdb6982ae6e2fe"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#ae2e8224737e747ec4bcdb6982ae6e2fe">registers</a> [10]</td></tr>
 <tr class="separator:ae2e8224737e747ec4bcdb6982ae6e2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a6448c6118594e8f9d19d94c751c5f2a0" name="a6448c6118594e8f9d19d94c751c5f2a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6448c6118594e8f9d19d94c751c5f2a0">&#9670;&#160;</a></span>TMC7300IC()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Top level class for the TMC7300 library. This class controls a TMC7300 chip. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aafd961b4fb7c6f99b7f52b6b97a9b029" name="aafd961b4fb7c6f99b7f52b6b97a9b029"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafd961b4fb7c6f99b7f52b6b97a9b029">&#9670;&#160;</a></span>TMC7300IC()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -129,7 +135,7 @@ Protected Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>_baudrate</em> = <code>115200</code>&#160;</td>
+          <td class="paramname"><em>_baudrate</em> = <code>100000</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -143,6 +149,16 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>constructor for class that controls a TMC7300 chip. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_pin</td><td>pin to send uart signals through </td></tr>
+    <tr><td class="paramname">_chipAddress</td><td>The address is selected by AD0 (bit 0, LSB) and AD1 (bit 1, MSB) in the range 0 to 3 </td></tr>
+    <tr><td class="paramname">_baudrate</td><td>approximate bits per second to communicate with, default 100000 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -271,28 +287,6 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ac039e0eb23338b144863a27bf15646a8" name="ac039e0eb23338b144863a27bf15646a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac039e0eb23338b144863a27bf15646a8">&#9670;&#160;</a></span>baudrate</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t TMC7300IC::baudrate</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a9d1811c593772eb078a5a61cdde254d1" name="a9d1811c593772eb078a5a61cdde254d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d1811c593772eb078a5a61cdde254d1">&#9670;&#160;</a></span>chipAddress</h2>
 
@@ -360,6 +354,28 @@ Protected Attributes</h2></td></tr>
 <div class="line"> </div>
 <div class="line">    0,  0,  0,  0,  0,  0,  0,  0,  0,  0}</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="a7b8c27b149e09bb1dc1aaa8b5e7bda45" name="a7b8c27b149e09bb1dc1aaa8b5e7bda45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b8c27b149e09bb1dc1aaa8b5e7bda45">&#9670;&#160;</a></span>uartDelay</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t TMC7300IC::uartDelay</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

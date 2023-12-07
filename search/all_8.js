@@ -45,7 +45,7 @@ var searchData=
   ['tmc7300_5fuart_5fenabled_42',['TMC7300_UART_ENABLED',['../_t_m_c7300___map_8h.html#a02e44bdc8c7d972f9674217fb5956480',1,'TMC7300_Map.h']]],
   ['tmc7300_5fuart_5finput_43',['TMC7300_UART_INPUT',['../_t_m_c7300___map_8h.html#adb4b8863ba83355114224f6ff7a94a1b',1,'TMC7300_Map.h']]],
   ['tmc7300_5fversion_44',['TMC7300_VERSION',['../_t_m_c7300___map_8h.html#a20a97f100a521602061b2c2cd3e7ea18',1,'TMC7300_Map.h']]],
-  ['tmc7300ic_45',['TMC7300IC',['../class_t_m_c7300_i_c.html#a6448c6118594e8f9d19d94c751c5f2a0',1,'TMC7300IC::TMC7300IC()'],['../class_t_m_c7300_i_c.html',1,'TMC7300IC']]],
+  ['tmc7300ic_45',['TMC7300IC',['../class_t_m_c7300_i_c.html#aafd961b4fb7c6f99b7f52b6b97a9b029',1,'TMC7300IC::TMC7300IC()'],['../class_t_m_c7300_i_c.html',1,'TMC7300IC']]],
   ['tmc_5ffield_2eh_46',['TMC_Field.h',['../_t_m_c___field_8h.html',1,'']]],
   ['tmcfield_47',['TMCField',['../class_t_m_c_field.html#a8031c1542754d3cf894812fc0781bb16',1,'TMCField::TMCField()'],['../class_t_m_c_field.html',1,'TMCField']]],
   ['tmcserial_2eh_48',['TMCSerial.h',['../_t_m_c_serial_8h.html',1,'']]]
