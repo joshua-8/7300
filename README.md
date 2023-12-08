@@ -14,7 +14,6 @@ My goal is to make a good library for controlling the TMC7300 chips, and to keep
  [Datasheet for TMC7300 motor driver IC](https://www.analog.com/media/en/technical-documentation/data-sheets/TMC7300_datasheet_rev1.08.pdf)
 
 ## Tested with
-* Arduino Uno
 * ESP32-S3 QT Py
 
 # Acknowledgements

@@ -22,7 +22,7 @@ public:
         , chipAddress(_chipAddress)
     {
         // TODO: limit to TMC7300's allowable speeds
-        uartDelay = (1000000 / _baudrate);
+        uartDelay = (1000000U / _baudrate);
     }
     void begin()
     {
@@ -44,10 +44,12 @@ protected:
     // clang-format on
 
 public:
-    void writeField(TMCField field, uint32_t fieldValue)
+    void writeField(TMCField field, uint32_t fieldValue, boolean write = true)
     {
         uint32_t registerValueToSend = field.setField(fieldValue, registers[field.valueAddress()]);
-        writeRegister(field.address(), registerValueToSend);
+        if (write) {
+            writeRegister(field.address(), registerValueToSend);
+        }
         registers[field.valueAddress()] = registerValueToSend;
     }
     uint32_t readField(TMCField field)
