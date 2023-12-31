@@ -87,7 +87,7 @@ public:
             digitalWrite(pin, HIGH); // Stop bit
             delayMicroseconds(uartDelay);
         }
-        delay(10); // TODO: DELAY SOME BETWEEN MESSAGES?
+        delayMicroseconds(uartDelay * 66);
     }
     // uint32_t readRegister(uint8_t address)
     // {
