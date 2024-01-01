@@ -52,7 +52,7 @@ public:
         }
         registers[field.valueAddress()] = registerValueToSend;
     }
-    uint32_t readField(TMCField field)
+    uint32_t readField(TMCField field, boolean read = true)
     {
         // uint32_t registerValueReceived = readRegister(field.address());
         // registers[field.valueAddress()] = registerValueReceived;
