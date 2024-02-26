@@ -3,6 +3,7 @@
 
 [![arduino-library-badge](https://www.ardu-badge.com/badge/TMC7300.svg?)](https://www.ardu-badge.com/TMC7300)
 [![PlatformIO Registry](https://badges.registry.platformio.org/packages/joshua1024/library/TMC7300.svg)](https://registry.platformio.org/libraries/joshua1024/TMC7300)
+[![ESP32 Component Registry](https://components.espressif.com/components/joshua-8/tmc7300/badge.svg)](https://components.espressif.com/components/joshua-8/tmc7300)
 [![Arduino Lint](https://github.com/joshua-8/TMC7300/actions/workflows/arduino-lint.yml/badge.svg)](https://github.com/joshua-8/TMC7300/actions/workflows/arduino-lint.yml)
 
 https://github.com/joshua-8/TMC7300
