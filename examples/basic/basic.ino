@@ -7,7 +7,7 @@
  * TMC7300 datasheet: https://www.analog.com/media/en/technical-documentation/data-sheets/TMC7300_datasheet_rev1.08.pdf
  */
 
-const byte ENpin = A1; // EN pin of driver, pulling it low until setup is complete prevents a short twitch on start from motor A
+const byte ENpin = 17; //(A1) EN pin of driver, pulling it low until setup is complete prevents a short twitch on start from motor A
 TMC7300IC driver = TMC7300IC(5, 3, 100000); // uartPin, chipAddress, baudrate
 
 void setup()
