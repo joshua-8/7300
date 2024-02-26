@@ -17,6 +17,8 @@ My goal is to make a good library for controlling the TMC7300 chips. To keep thi
 ## Tested with
 * ESP32-S3 QT Py
 
+available as an Espressif IDF Component: https://components.espressif.com/components/joshua-8/tmc7300
+
 # Acknowledgements
 * This library is based on [@bread-wolf](https://github.com/bread-wolf)'s work in the [TMCSerial](https://github.com/bread-wolf/TMCSerial) and [TMCField](https://github.com/bread-wolf/TMCField) libraries, both of which are generously licensed under the AGPL3.0 license.
 * This library is based on work done by [@trinamic](https://github.com/trinamic) and [Analog Devices Inc.](https://www.analog.com) for the [TMC-API](https://github.com/trinamic/TMC-API/tree/master), which is generously licensed under the MIT license.
