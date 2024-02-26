@@ -1,4 +1,4 @@
-name: Push component to https://components.espressif.com
+name: publish ESPIDF component
 on:
   push:
     tags:
