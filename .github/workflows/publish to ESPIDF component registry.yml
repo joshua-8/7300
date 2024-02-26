@@ -15,5 +15,5 @@ jobs:
         with:
           name: "TMC7300"
           version: ${{ github.ref_name }}
-          namespace: "espressif"
+          namespace: "joshua-8"
           api_token: ${{ secrets.IDF_COMPONENT_API_TOKEN }}
