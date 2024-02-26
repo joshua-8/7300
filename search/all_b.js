@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['writefield_0',['writeField',['../class_t_m_c7300_i_c.html#ab78c7762d4b5cadf906095cf7ebf8bbe',1,'TMC7300IC']]],
-  ['writeregister_1',['writeRegister',['../class_t_m_c7300_i_c.html#a8060ea4097e73d0b7d637940cbfd126d',1,'TMC7300IC']]]
+  ['readfield_0',['readField',['../class_t_m_c7300_i_c.html#aff4f6c61169b64894611b911cf275f5c',1,'TMC7300IC']]],
+  ['readme_2emd_1',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['registers_2',['registers',['../class_t_m_c7300_i_c.html#ae2e8224737e747ec4bcdb6982ae6e2fe',1,'TMC7300IC']]]
 ];
