@@ -24,12 +24,13 @@ public:
         // TODO: limit to TMC7300's allowable speeds
         uartDelay = (1000000U / _baudrate);
     }
-    void begin()
+    void begin(boolean extcap = true)
     {
         pinMode(pin, OUTPUT);
         digitalWrite(pin, HIGH);
         delay(10); // TODO: WHAT DELAY ON STARTUP IS NEEDED?
         writeField(TMC7300_PWM_DIRECT, 1);
+        writeField(TMC7300_EXTCAP, extcap); // capacitor on vcp
     }
 
 protected:
