@@ -5,10 +5,10 @@
 #include <Arduino.h>
 
 #define TMC_WRITE_BIT 0x80
-// https://www.analog.com/media/en/technical-documentation/data-sheets/TMC7300_datasheet_rev1.08.pdf
 
 /**
  * @brief  Top level class for the TMC7300 library. This class controls a TMC7300 chip.
+ * https://www.analog.com/media/en/technical-documentation/data-sheets/TMC7300_datasheet_rev1.08.pdf
  */
 class TMC7300IC {
 public:
@@ -46,6 +46,13 @@ protected:
     // clang-format on
 
 public:
+    /**
+     * @brief  write data to a field of a register in the TMC7300 (see TMC7300_Map.h and the TMC7300 datasheet for more information)
+     * @param  field: TMCField to write to
+     * @param  fieldValue: value to write to the field, it will be masked to fit in the field
+     * @param  write: (boolen) whether to write immediately or just save the value to be written by the next writeField that accesses the same register
+     * @retval None
+     */
     void writeField(TMCField field, uint32_t fieldValue, boolean write = true)
     {
         uint32_t registerValueToSend = field.setField(fieldValue, registers[field.valueAddress()]);
@@ -54,6 +61,13 @@ public:
         }
         registers[field.valueAddress()] = registerValueToSend;
     }
+    /**
+     * @brief  read data from a field of a register in the TMC7300 (see TMC7300_Map.h and the TMC7300 datasheet for more information)
+     * @note  if the read failed, the value will be the last value read from the register
+     * @param  field: TMCField to read from
+     * @param  read: (boolen) whether to read immediately or recall the value from the last time the register was read
+     * @retval  value of the field
+     */
     uint32_t readField(TMCField field, boolean read = true)
     {
         uint32_t registerValueReceived = 0;
@@ -62,6 +76,13 @@ public:
         }
         return field.getField(registers[field.valueAddress()]);
     }
+    /**
+     * @brief  write data to a register in the TMC7300
+     * @note  You should usually use writeField instead of this function, because this function doesn't keep track of other fields sharing the register.
+     * @param  address: address of the register to write to
+     * @param  value: value to write to the register
+     * @retval None
+     */
     void writeRegister(uint8_t address, uint32_t value)
     {
         // from https://github.com/bread-wolf/TMCSerial/blob/cb87877ab4f3c39ed7a5b1ec99cf73eb0f4d5a6c/TMCSerial.cpp#L78C4-L94C6
@@ -96,6 +117,13 @@ public:
         }
         delay(1); // prevent messages from being too close together
     }
+    /**
+     * @brief  read data from a register in the TMC7300
+     * @note  You should usually use readField instead of this function, because most registers contain multiple fields.
+     * @param  address: address of the register to read from
+     * @param  value: (reference to uint32_t variable) gets set to the value read from the register
+     * @retval  true if the read was successful, false if the read failed and value was not changed
+     */
     boolean readRegister(uint8_t address, uint32_t& value)
     {
         uint8_t addressRead = address & 0b01111111;
