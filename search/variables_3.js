@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uartdelay_0',['uartDelay',['../class_t_m_c7300_i_c.html#a7b8c27b149e09bb1dc1aaa8b5e7bda45',1,'TMC7300IC']]]
+  ['registers_0',['registers',['../class_t_m_c7300_i_c.html#ae2e8224737e747ec4bcdb6982ae6e2fe',1,'TMC7300IC']]]
 ];

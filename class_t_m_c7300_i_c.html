@@ -87,8 +87,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aafd961b4fb7c6f99b7f52b6b97a9b029" id="r_aafd961b4fb7c6f99b7f52b6b97a9b029"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#aafd961b4fb7c6f99b7f52b6b97a9b029">TMC7300IC</a> (uint8_t _pin, uint8_t _chipAddress, uint32_t _baudrate=100000)</td></tr>
 <tr class="memdesc:aafd961b4fb7c6f99b7f52b6b97a9b029"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor for class that controls a TMC7300 chip.  <br /></td></tr>
 <tr class="separator:aafd961b4fb7c6f99b7f52b6b97a9b029"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa093cb733a62e56d4790abd0a8646f32" id="r_aa093cb733a62e56d4790abd0a8646f32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#aa093cb733a62e56d4790abd0a8646f32">begin</a> (boolean extcap=true)</td></tr>
-<tr class="separator:aa093cb733a62e56d4790abd0a8646f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2af07f00fe77a951e2eeb7561d023ad9" id="r_a2af07f00fe77a951e2eeb7561d023ad9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#a2af07f00fe77a951e2eeb7561d023ad9">begin</a> (boolean _extcap=true)</td></tr>
+<tr class="memdesc:a2af07f00fe77a951e2eeb7561d023ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">begin communication with the TMC7300  <br /></td></tr>
+<tr class="separator:a2af07f00fe77a951e2eeb7561d023ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae19c13c974a71d1b8900d38660653c92" id="r_ae19c13c974a71d1b8900d38660653c92"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#ae19c13c974a71d1b8900d38660653c92">checkDriver</a> ()</td></tr>
+<tr class="memdesc:ae19c13c974a71d1b8900d38660653c92"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the TMC7300's settings match the settings they should have and reset them if they don't  <br /></td></tr>
+<tr class="separator:ae19c13c974a71d1b8900d38660653c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab78c7762d4b5cadf906095cf7ebf8bbe" id="r_ab78c7762d4b5cadf906095cf7ebf8bbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#ab78c7762d4b5cadf906095cf7ebf8bbe">writeField</a> (<a class="el" href="class_t_m_c_field.html">TMCField</a> field, uint32_t fieldValue, boolean write=true)</td></tr>
 <tr class="memdesc:ab78c7762d4b5cadf906095cf7ebf8bbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">write data to a field of a register in the TMC7300 (see <a class="el" href="_t_m_c7300___map_8h.html">TMC7300_Map.h</a> and the TMC7300 datasheet for more information)  <br /></td></tr>
 <tr class="separator:ab78c7762d4b5cadf906095cf7ebf8bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -110,6 +114,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a9d1811c593772eb078a5a61cdde254d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b8c27b149e09bb1dc1aaa8b5e7bda45" id="r_a7b8c27b149e09bb1dc1aaa8b5e7bda45"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#a7b8c27b149e09bb1dc1aaa8b5e7bda45">uartDelay</a></td></tr>
 <tr class="separator:a7b8c27b149e09bb1dc1aaa8b5e7bda45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a065acca0b8762c72ff391c8eef44af30" id="r_a065acca0b8762c72ff391c8eef44af30"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#a065acca0b8762c72ff391c8eef44af30">extcap</a></td></tr>
+<tr class="separator:a065acca0b8762c72ff391c8eef44af30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2e8224737e747ec4bcdb6982ae6e2fe" id="r_ae2e8224737e747ec4bcdb6982ae6e2fe"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#ae2e8224737e747ec4bcdb6982ae6e2fe">registers</a> [10]</td></tr>
 <tr class="separator:ae2e8224737e747ec4bcdb6982ae6e2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -169,8 +175,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa093cb733a62e56d4790abd0a8646f32" name="aa093cb733a62e56d4790abd0a8646f32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa093cb733a62e56d4790abd0a8646f32">&#9670;&#160;</a></span>begin()</h2>
+<a id="a2af07f00fe77a951e2eeb7561d023ad9" name="a2af07f00fe77a951e2eeb7561d023ad9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2af07f00fe77a951e2eeb7561d023ad9">&#9670;&#160;</a></span>begin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,7 +188,7 @@ Protected Attributes</h2></td></tr>
           <td class="memname">void TMC7300IC::begin </td>
           <td>(</td>
           <td class="paramtype">boolean&#160;</td>
-          <td class="paramname"><em>extcap</em> = <code>true</code></td><td>)</td>
+          <td class="paramname"><em>_extcap</em> = <code>true</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -192,6 +198,54 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>begin communication with the TMC7300 </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_extcap</td><td>(boolean) whether to enable the external capacitor on the vcp pin, default true </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae19c13c974a71d1b8900d38660653c92" name="ae19c13c974a71d1b8900d38660653c92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae19c13c974a71d1b8900d38660653c92">&#9670;&#160;</a></span>checkDriver()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean TMC7300IC::checkDriver </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>check if the TMC7300's settings match the settings they should have and reset them if they don't </p>
+<dl class="section note"><dt>Note</dt><dd>This function is useful for recovering from power cycling the driver but not the microcontroller </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>if settings had to be reset </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -421,6 +475,28 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">uint8_t TMC7300IC::chipAddress</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a065acca0b8762c72ff391c8eef44af30" name="a065acca0b8762c72ff391c8eef44af30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a065acca0b8762c72ff391c8eef44af30">&#9670;&#160;</a></span>extcap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean TMC7300IC::extcap</td>
         </tr>
       </table>
   </td>
