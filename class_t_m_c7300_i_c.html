@@ -95,6 +95,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aff4f6c61169b64894611b911cf275f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8060ea4097e73d0b7d637940cbfd126d" id="r_a8060ea4097e73d0b7d637940cbfd126d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#a8060ea4097e73d0b7d637940cbfd126d">writeRegister</a> (uint8_t address, uint32_t value)</td></tr>
 <tr class="separator:a8060ea4097e73d0b7d637940cbfd126d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6591dbe32c6ddd2ce1923641c3793dc6" id="r_a6591dbe32c6ddd2ce1923641c3793dc6"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#a6591dbe32c6ddd2ce1923641c3793dc6">readRegister</a> (uint8_t address, uint32_t &amp;value)</td></tr>
+<tr class="separator:a6591dbe32c6ddd2ce1923641c3793dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -155,7 +157,7 @@ Protected Attributes</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">_pin</td><td>pin to send uart signals through </td></tr>
     <tr><td class="paramname">_chipAddress</td><td>The address is selected by AD0 (bit 0, LSB) and AD1 (bit 1, MSB) in the range 0 to 3 </td></tr>
-    <tr><td class="paramname">_baudrate</td><td>approximate bits per second to communicate with, default 100000 </td></tr>
+    <tr><td class="paramname">_baudrate</td><td>approximate bits per second to communicate with, default 10000, must be between 10000 and 100000 </td></tr>
   </table>
   </dd>
 </dl>
@@ -209,6 +211,42 @@ Protected Attributes</h2></td></tr>
           <td></td>
           <td class="paramtype">boolean&#160;</td>
           <td class="paramname"><em>read</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6591dbe32c6ddd2ce1923641c3793dc6" name="a6591dbe32c6ddd2ce1923641c3793dc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6591dbe32c6ddd2ce1923641c3793dc6">&#9670;&#160;</a></span>readRegister()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boolean TMC7300IC::readRegister </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
