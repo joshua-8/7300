@@ -7,7 +7,7 @@
 
 https://github.com/joshua-8/TMC7300
 
-Doxygen reference: https://joshua-8.github.io/TMC7300/
+Doxygen reference: https://joshua-8.github.io/TMC7300/class_t_m_c7300_i_c.html
 
 My goal is to make a good library for controlling the TMC7300 chips. To keep things simple, unlike other TMC motor driver libraries (see Acknowledgements), I do not have a plan to support other chips in a more general way using this library.
 
