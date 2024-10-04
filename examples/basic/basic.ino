@@ -31,7 +31,7 @@ void loop()
         driver.writeField(TMC7300_PWM_DIRECT, 1);
     }
 
-    driver.writeField(TMC7300_PWM_A, 0); // motor a backwards, queue to send with next writeField to either PWMA or PWMB since they share a register
+    driver.writeField(TMC7300_PWM_A, 0, false); // motor a backwards, queue to send with next writeField to either PWMA or PWMB since they share a register
     delay(1000);
     driver.writeField(TMC7300_PWM_B, 150); // motor b forwards
     delay(1000);
