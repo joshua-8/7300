@@ -25,19 +25,44 @@ public:
         _baudrate = constrain(_baudrate, 10000, 100000);
         uartDelay = 1000000 / _baudrate;
     }
-    void begin(boolean extcap = true)
+    /**
+     * @brief  begin communication with the TMC7300
+     * @param  _extcap: (boolean) whether to enable the external capacitor on the vcp pin, default true
+     * @retval None
+     */
+    void begin(boolean _extcap = true)
     {
+        extcap = _extcap;
         pinMode(pin, OUTPUT);
         digitalWrite(pin, HIGH);
         delay(10);
         writeField(TMC7300_PWM_DIRECT, 1, true);
         writeField(TMC7300_EXTCAP, extcap, true); // capacitor on vcp
     }
+    /**
+     * @brief  check if the TMC7300's settings match the settings they should have and reset them if they don't
+     * @note  This function is useful for recovering from power cycling the driver but not the microcontroller
+     * @retval true if settings had to be reset
+     */
+    boolean checkDriver()
+    {
+        boolean didSomething = false;
+        if (readField(TMC7300_EXTCAP) != extcap) {
+            writeField(TMC7300_EXTCAP, extcap);
+            didSomething = true;
+        }
+        if (readField(TMC7300_PWM_DIRECT) != 1) {
+            writeField(TMC7300_PWM_DIRECT, 1);
+            didSomething = true;
+        }
+        return didSomething;
+    }
 
 protected:
     uint8_t pin;
     uint8_t chipAddress;
     uint32_t uartDelay;
+    boolean extcap;
 
     // clang-format off
     int32_t registers[10] = {
