@@ -38,6 +38,7 @@ public:
         delay(10);
         writeField(TMC7300_PWM_DIRECT, 1, true);
         writeField(TMC7300_EXTCAP, extcap, true); // capacitor on vcp
+        writeField(TMC7300_SLAVECONF, 2, true);
     }
     /**
      * @brief  check if the TMC7300's settings match the settings they should have and reset them if they don't
@@ -55,6 +56,10 @@ public:
             writeField(TMC7300_PWM_DIRECT, 1);
             didSomething = true;
         }
+        if (readField(TMC7300_SLAVECONF) != 2) {
+            writeField(TMC7300_SLAVECONF, 2);
+            didSomething = true;
+        }
         return didSomething;
     }
 
@@ -66,9 +71,9 @@ protected:
 
     // clang-format off
     int32_t registers[10] = {
-//	0	1	2	3	4	5	6	7	8	9
-	0,	0,	0,	0,	0,	0,	0,	0,	0,	0};
-    // clang-format on
+//	0	1	2	3	4	5	                6	7	        8	9
+	0,	0,	0,	0,	0,	0b1111100000001,	0,	0x13008001,	0,	0xC40D1024};
+// clang-format on
 
 public:
     /**
@@ -182,9 +187,9 @@ public:
         delayMicroseconds(20);
         for (j = 0; j < 8; j++) {
             m = micros();
-            while (digitalRead(pin) == HIGH && micros() - m < 1000) { } // wait for start bit to start
+            while (digitalRead(pin) == HIGH && micros() - m < 3000) { } // wait for start bit to start
             m = micros();
-            if (micros() - m >= 1000) { // timed out, tmc7300 didn't respond to the read request
+            if (micros() - m >= 3000) { // timed out, tmc7300 didn't respond to the read request
                 delay(1);
                 return false;
             }
