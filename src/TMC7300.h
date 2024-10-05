@@ -43,22 +43,29 @@ public:
     /**
      * @brief  check if the TMC7300's settings match the settings they should have and reset them if they don't
      * @note  This function is useful for recovering from power cycling the driver but not the microcontroller
-     * @retval true if settings had to be reset
+     * @retval not 0 if settings had to be reset (bit 0: drv_error, bit 1: extcap, bit 2: pwm_direct, bit 3: enabledrv)
      */
-    boolean checkDriver()
+    int checkDriver()
     {
-        boolean didSomething = false;
+        int didSomething = 0;
+        // if drv_error is set, disable and re-enable the driver
+        if (readField(TMC7300_ENABLEDRV) != 1) {
+            writeField(TMC7300_ENABLEDRV, 1);
+            writeField(TMC7300_DRV_ERR, 1);
+            didSomething |= 0b01000;
+        }
+        if (readField(TMC7300_DRV_ERR) == 1) {
+            writeField(TMC7300_ENABLEDRV, 0);
+            writeField(TMC7300_DRV_ERR, 1);
+            didSomething |= 0b1;
+        }
         if (readField(TMC7300_EXTCAP) != extcap) {
             writeField(TMC7300_EXTCAP, extcap);
-            didSomething = true;
+            didSomething |= 0b10;
         }
         if (readField(TMC7300_PWM_DIRECT) != 1) {
             writeField(TMC7300_PWM_DIRECT, 1);
-            didSomething = true;
-        }
-        if (readField(TMC7300_SLAVECONF) != 2) {
-            writeField(TMC7300_SLAVECONF, 2);
-            didSomething = true;
+            didSomething |= 0b100;
         }
         return didSomething;
     }
@@ -70,10 +77,10 @@ protected:
     boolean extcap;
 
     // clang-format off
-    int32_t registers[10] = {
-//	0	1	2	3	4	5	                6	7	        8	9
-	0,	0,	0,	0,	0,	0b1111100000001,	0,	0x13008001,	0,	0xC40D1024};
-// clang-format on
+    uint32_t registers[10] = {
+//	0	1	2	3	4	5	                        6	7	                    8	9
+	0,	0,	0,	0,	0,	(uint32_t)0b1111100000001,	0,	(uint32_t)0x13008001,	0,	(uint32_t)0xC40D1024};
+    // clang-format on
 
 public:
     /**
@@ -225,6 +232,15 @@ public:
         value = (response[3] << 24) | (response[4] << 16) | (response[5] << 8) | response[6];
 
         return true;
+    }
+
+    /**
+     * @brief  get the chipAddress of the TMC7300
+     * @retval  chipAddress
+     */
+    uint8_t getChipAddress()
+    {
+        return chipAddress;
     }
 };
 #endif // TMC7300_H
