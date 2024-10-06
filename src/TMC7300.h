@@ -105,8 +105,10 @@ public:
     uint32_t readField(TMCField field, boolean read = true)
     {
         uint32_t registerValueReceived = 0;
-        if (readRegister(field.address(), registerValueReceived)) {
-            registers[field.valueAddress()] = registerValueReceived;
+        if (read) {
+            if (readRegister(field.address(), registerValueReceived)) {
+                registers[field.valueAddress()] = registerValueReceived;
+            }
         }
         return field.getField(registers[field.valueAddress()]);
     }
