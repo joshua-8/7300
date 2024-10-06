@@ -87,9 +87,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aafd961b4fb7c6f99b7f52b6b97a9b029" id="r_aafd961b4fb7c6f99b7f52b6b97a9b029"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#aafd961b4fb7c6f99b7f52b6b97a9b029">TMC7300IC</a> (uint8_t _pin, uint8_t _chipAddress, uint32_t _baudrate=100000)</td></tr>
 <tr class="memdesc:aafd961b4fb7c6f99b7f52b6b97a9b029"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor for class that controls a TMC7300 chip.  <br /></td></tr>
 <tr class="separator:aafd961b4fb7c6f99b7f52b6b97a9b029"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2af07f00fe77a951e2eeb7561d023ad9" id="r_a2af07f00fe77a951e2eeb7561d023ad9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#a2af07f00fe77a951e2eeb7561d023ad9">begin</a> (boolean _extcap=true)</td></tr>
-<tr class="memdesc:a2af07f00fe77a951e2eeb7561d023ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">begin communication with the TMC7300  <br /></td></tr>
-<tr class="separator:a2af07f00fe77a951e2eeb7561d023ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a309b2143bcdb2e70f32ea71fb807b63b" id="r_a309b2143bcdb2e70f32ea71fb807b63b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#a309b2143bcdb2e70f32ea71fb807b63b">begin</a> (boolean _extcap=true, uint8_t _irun=31)</td></tr>
+<tr class="memdesc:a309b2143bcdb2e70f32ea71fb807b63b"><td class="mdescLeft">&#160;</td><td class="mdescRight">begin communication with the TMC7300  <br /></td></tr>
+<tr class="separator:a309b2143bcdb2e70f32ea71fb807b63b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d3ded41307dd7d08845002f6eea0348" id="r_a7d3ded41307dd7d08845002f6eea0348"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_m_c7300_i_c.html#a7d3ded41307dd7d08845002f6eea0348">checkDriver</a> ()</td></tr>
 <tr class="memdesc:a7d3ded41307dd7d08845002f6eea0348"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the TMC7300's settings match the settings they should have and reset them if they don't  <br /></td></tr>
 <tr class="separator:a7d3ded41307dd7d08845002f6eea0348"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,8 +178,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2af07f00fe77a951e2eeb7561d023ad9" name="a2af07f00fe77a951e2eeb7561d023ad9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2af07f00fe77a951e2eeb7561d023ad9">&#9670;&#160;</a></span>begin()</h2>
+<a id="a309b2143bcdb2e70f32ea71fb807b63b" name="a309b2143bcdb2e70f32ea71fb807b63b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a309b2143bcdb2e70f32ea71fb807b63b">&#9670;&#160;</a></span>begin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -191,8 +191,18 @@ Protected Attributes</h2></td></tr>
           <td class="memname">void TMC7300IC::begin </td>
           <td>(</td>
           <td class="paramtype">boolean&#160;</td>
-          <td class="paramname"><em>_extcap</em> = <code>true</code></td><td>)</td>
+          <td class="paramname"><em>_extcap</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>_irun</em> = <code>31</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -245,7 +255,7 @@ Protected Attributes</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>This function is useful for recovering from power cycling the driver but not the microcontroller </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">not</td><td>0 if settings had to be reset (bit 0: drv_error, bit 1: extcap, bit 2: pwm_direct, bit 3: enabledrv) </td></tr>
+    <tr><td class="paramname">not</td><td>0 if settings had to be reset (bit 0: drv_error, bit 2: pwm_direct, bit 3: enabledrv) </td></tr>
   </table>
   </dd>
 </dl>
