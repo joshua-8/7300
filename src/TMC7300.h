@@ -30,7 +30,7 @@ public:
      * @param  _extcap: (boolean) whether to enable the external capacitor on the vcp pin, default true
      * @retval None
      */
-    void begin(boolean _extcap = true)
+    void begin(boolean _extcap = true, uint8_t _irun = 31)
     {
         extcap = _extcap;
         pinMode(pin, OUTPUT);
@@ -39,16 +39,21 @@ public:
         writeField(TMC7300_PWM_DIRECT, 1, true);
         writeField(TMC7300_EXTCAP, extcap, true); // capacitor on vcp
         writeField(TMC7300_SLAVECONF, 2, true);
+        writeField(TMC7300_IRUN, _irun, true);
     }
     /**
      * @brief  check if the TMC7300's settings match the settings they should have and reset them if they don't
      * @note  This function is useful for recovering from power cycling the driver but not the microcontroller
-     * @retval not 0 if settings had to be reset (bit 0: drv_error, bit 1: extcap, bit 2: pwm_direct, bit 3: enabledrv)
+     * @retval not 0 if settings had to be reset (bit 0: drv_error, bit 2: pwm_direct, bit 3: enabledrv)
      */
     int checkDriver()
     {
         int didSomething = 0;
         // if drv_error is set, disable and re-enable the driver
+        if (readField(TMC7300_PWM_DIRECT) != 1) {
+            writeField(TMC7300_PWM_DIRECT, 1);
+            didSomething |= 0b100;
+        }
         if (readField(TMC7300_ENABLEDRV) != 1) {
             writeField(TMC7300_ENABLEDRV, 1);
             writeField(TMC7300_DRV_ERR, 1);
@@ -58,14 +63,6 @@ public:
             writeField(TMC7300_ENABLEDRV, 0);
             writeField(TMC7300_DRV_ERR, 1);
             didSomething |= 0b1;
-        }
-        if (readField(TMC7300_EXTCAP) != extcap) {
-            writeField(TMC7300_EXTCAP, extcap);
-            didSomething |= 0b10;
-        }
-        if (readField(TMC7300_PWM_DIRECT) != 1) {
-            writeField(TMC7300_PWM_DIRECT, 1);
-            didSomething |= 0b100;
         }
         return didSomething;
     }
