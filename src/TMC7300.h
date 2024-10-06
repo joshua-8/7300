@@ -98,7 +98,7 @@ public:
     /**
      * @brief  read data from a field of a register in the TMC7300 (see TMC7300_Map.h and the TMC7300 datasheet for more information)
      * @note  if the read failed, the value will be the last value read from the register
-     * @param  field: TMCField to read from
+     * @param  field: TMCField to read from (ensure the field allows reading)
      * @param  read: (boolen) whether to read immediately or recall the value from the last time the register was read
      * @retval  value of the field
      */
